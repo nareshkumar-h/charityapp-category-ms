@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
+@RequestMapping("Categories")
 public class CategoryController {
 	
 
@@ -27,7 +29,7 @@ public class CategoryController {
 	private CategoryService categoryService;
 	
 	
-	@PostMapping("addCategory")
+	@PostMapping()
 	@ApiOperation(value = "CategoryAPI")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Category added", response = String.class),
 			@ApiResponse(code = 400, message = "Invalid Category", response = Category.class) })
@@ -60,13 +62,11 @@ public class CategoryController {
 		}
 	}
 
-	@GetMapping("viewCategory")
+	@GetMapping()
 	@ResponseStatus(code = HttpStatus.OK)
 	public List<Category> viewCategory() {
 		Category category = null;
-		List<Category> viewResponse = null;
-
-		viewResponse = categoryService.listCategory(category);
+		 List<Category> viewResponse = categoryService.listCategory(category);
 		return viewResponse;
 
 	}
