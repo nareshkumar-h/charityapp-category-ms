@@ -30,8 +30,8 @@ public class CategoryController {
 	private CategoryService categoryService;
 
 	@PostMapping()
-	@ApiOperation(value = "CategoryAPI")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "Category added", response = String.class),
+	@ApiOperation(value = "categoryAPI")
+	@ApiResponses(value = { @ApiResponse(code = 201, message = "Category added", response = String.class),
 			@ApiResponse(code = 400, message = "Invalid Category", response = Category.class) })
 
 	public ResponseEntity<?> addCategory(@RequestBody CategoryDTO categoryDTO) {

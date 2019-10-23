@@ -26,7 +26,7 @@ public class Category {
 	private String categoryName;
 	
 	@Column(name="created_by")
-	private int creator;
+	private int createdBy;
 	
 	@Column(name="active")
 	private boolean active;

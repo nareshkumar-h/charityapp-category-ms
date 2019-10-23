@@ -9,7 +9,7 @@ public class CategoryDTO {
 	
 	private int id;
 	private String categoryName;
-	private int creator;
+	private int createdBy;
 	private boolean active;
 	private LocalDateTime createdDate;
 	private LocalDateTime modifiedDate;

@@ -24,7 +24,7 @@ public class CategoryService {
 	@Transactional
 	public void addCategory(CategoryDTO categoryDTO) throws ServiceException {
 		Category category=new Category();
-		category.setCreator(categoryDTO.getCreator());
+		category.setCreatedBy(categoryDTO.getCreatedBy());
 		category.setCategoryName(categoryDTO.getCategoryName());
 		
 		category.setActive(true);
