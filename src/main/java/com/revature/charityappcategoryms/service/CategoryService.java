@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.revature.charityappcategoryms.dto.CategoryDTO;
 import com.revature.charityappcategoryms.dto.MessageConstant;
 import com.revature.charityappcategoryms.exception.ServiceException;
 import com.revature.charityappcategoryms.model.Category;
@@ -21,7 +22,11 @@ public class CategoryService {
 	private CategoryRepository categoryRepository;
 	
 	@Transactional
-	public void addCategory(Category category) throws ServiceException {
+	public void addCategory(CategoryDTO categoryDTO) throws ServiceException {
+		Category category=new Category();
+		category.setCreator(categoryDTO.getCreator());
+		category.setCategoryName(categoryDTO.getCategoryName());
+		
 		category.setActive(true);
 		category.setCreatedDate(LocalDateTime.now());
 		category.setModifiedDate(LocalDateTime.now());
@@ -35,6 +40,7 @@ public class CategoryService {
 	@Transactional
 	public List<Category> listCategory(Category category) {
 		return categoryRepository.findAll();
+
 	}
 
 }
