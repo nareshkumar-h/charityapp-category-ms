@@ -34,16 +34,18 @@ public class CategoryService {
 		category.setActive(true);
 		category.setCreatedDate(LocalDateTime.now());
 		category.setModifiedDate(LocalDateTime.now());
-		category = categoryRepository.save(category);
-
-		if (category == null) {
+		try {
+			categoryRepository.save(category);
+		} catch (Exception e) {
+			e.printStackTrace();
 			throw new ServiceException(MessageConstant.INVALID_CATEGORY);
 		}
+
 
 	}
 
 	@Transactional
-	public List<Category> listCategory(Category category) {
+	public List<Category> listCategory() {
 		return categoryRepository.findAll();
 
 	}
