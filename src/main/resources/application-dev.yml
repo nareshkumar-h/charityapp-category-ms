@@ -1,11 +1,11 @@
 spring:
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://trainingdb.ck1ayq0lncmp.ap-south-1.rds.amazonaws.com:3306/charityapp_category_db
-        username: shalu
-        password: shalu 
+        url: jdbc:mysql://charityapp-prod.cwnjiz1ppgaw.ap-south-1.rds.amazonaws.com:3306/charityapp_category_db
+        username: prod_user
+        password: prod_user 
     flyway: 
         driverClassName: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://trainingdb.ck1ayq0lncmp.ap-south-1.rds.amazonaws.com:3306/charityapp_category_db
-        username: shalu
-        password: shalu
+        url: jdbc:mysql://charityapp-prod.cwnjiz1ppgaw.ap-south-1.rds.amazonaws.com:3306/charityapp_category_db
+        username: prod_user
+        password: prod_user
