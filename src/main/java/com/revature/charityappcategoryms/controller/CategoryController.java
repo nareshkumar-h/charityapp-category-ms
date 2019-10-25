@@ -29,6 +29,12 @@ public class CategoryController {
 	@Autowired
 	private CategoryService categoryService;
 
+ /*
+ * This method is used to add a new category
+ * Takes object as parameters
+ * returns the success or failure message
+ * 
+ */
 	@PostMapping()
 	@ApiOperation(value = "categoryAPI")
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Category added", response = String.class),
@@ -47,6 +53,13 @@ public class CategoryController {
 
 	}
 
+	/*
+	 * This method shows the list of different categories
+	 * It does not takes input parameters
+	 * returns the category list
+	 * 
+	 */
+	
 	@GetMapping()
 	@ResponseStatus(code = HttpStatus.OK)
 	public List<Category> viewCategory() {
