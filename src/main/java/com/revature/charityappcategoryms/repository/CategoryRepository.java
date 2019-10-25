@@ -7,7 +7,5 @@ import com.revature.charityappcategoryms.model.Category;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
-	
-	
 
 }
