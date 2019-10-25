@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping("Categories")
+@RequestMapping("categories")
 public class CategoryController {
 
 	@Autowired
@@ -48,7 +48,7 @@ public class CategoryController {
 
 		} catch (ServiceException e) {
 			Message message = new Message(e.getMessage());
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(message,HttpStatus.BAD_REQUEST);
 		}
 
 	}
@@ -60,11 +60,10 @@ public class CategoryController {
 	 * 
 	 */
 	
-	@GetMapping()
+	@GetMapping("/listCategory")
 	@ResponseStatus(code = HttpStatus.OK)
 	public List<Category> viewCategory() {
-		Category category = null;
-		List<Category> viewResponse = categoryService.listCategory(category);
+		List<Category> viewResponse = categoryService.listCategory();
 		return viewResponse;
 
 	}
